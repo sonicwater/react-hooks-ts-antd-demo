@@ -6,11 +6,12 @@ import React from 'react'
 // import Example5 from './example/example5'
 // import Example6 from './example/example6_useReducer'
 // import Example7 from './example/example7_useContext'
-import Example8 from './example/example8'
+// import Example8 from './example/example8'
+// import Login from './user/login'
 const Main = () => {
 
   return (
-    <div>
+    <>
       {/*<User name='Tong' age={8} />
       <Counter />
       <TextInput />
@@ -18,8 +19,8 @@ const Main = () => {
   	  <Example5 />
   	  <Example6 />
   	  <Example7 />*/}
-      <Example8 />
-    </div>
+      main sonic
+    </>
   )
 }
 export default Main

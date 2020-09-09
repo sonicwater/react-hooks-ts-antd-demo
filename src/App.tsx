@@ -1,13 +1,33 @@
 import React from 'react';
-import Main from './page/main'
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  // Link
+} from 'react-router-dom';
+import routes from './router';
+import { RouteWithSubRoutes } from './assets/common';
+import { RouteInterface } from './assets/interface';
+import 'antd/dist/antd.css';
 
-
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <Main />
-    </div>
+    <Router>
+      <>
+        {/*<header className="App-header">
+          <ul>
+            <li><Link to="/login">登陆页</Link></li>
+            <li><Link to="/main">主页</Link></li>
+          </ul>
+        </header>*/}
+
+        <Switch>
+          {routes.map((route: RouteInterface, i: number) => {
+            return RouteWithSubRoutes(route, i)
+          })}
+        </Switch>
+
+      </>
+    </Router>
   );
 }
 
