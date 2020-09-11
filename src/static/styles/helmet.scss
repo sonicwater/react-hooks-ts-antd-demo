@@ -1,0 +1,28 @@
+.helmet-warpper{
+  width: 100%;
+  white-space: nowrap;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  background: #fff;
+  -webkit-box-shadow: 0px 1px 11px 1px rgba(12, 81, 160, 0.13);
+  box-shadow: 0px 1px 11px 1px rgba(12, 81, 160, 0.13);
+  font-size: 16px;
+  color: #2a3347;
+  .logo{
+    float: left;
+    img {
+      width: 40px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    span {
+      font-size: 16px;
+      font-family: Raleway,Hiragino Sans GB,sans-serif;
+      height: 40px;
+      line-height: 40px;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+  }
+}

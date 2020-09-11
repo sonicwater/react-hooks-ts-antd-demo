@@ -1,0 +1,9 @@
+.login-bg{
+  background-color: #f1f1f1;
+  height: 100%;position: relative;
+  .login-component-layout{
+  	position: absolute;
+  	left: 50%;top:50%;
+  	width: 400px;margin-left: -200px;margin-top: -150px;height: 300px;
+  }
+}
