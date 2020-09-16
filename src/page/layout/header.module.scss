@@ -1,14 +1,15 @@
-.helmet-warpper{
+.header-warpper{
   width: 100%;
   white-space: nowrap;
-  height: 55px;
-  line-height: 55px;
+  height: 64px;
+  line-height: 64px;
   text-align: center;
   background: #fff;
   -webkit-box-shadow: 0px 1px 11px 1px rgba(12, 81, 160, 0.13);
   box-shadow: 0px 1px 11px 1px rgba(12, 81, 160, 0.13);
   font-size: 16px;
   color: #2a3347;
+  position: relative;z-index: 999;
   .logo{
     float: left;
     img {

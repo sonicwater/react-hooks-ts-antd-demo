@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Route
 } from 'react-router-dom';
-import { RouteInterface } from './interface';
+import { RouteInterface } from 'model/route';
 
 const RouteWithSubRoutes = (route: RouteInterface, index: number) => {
   return (

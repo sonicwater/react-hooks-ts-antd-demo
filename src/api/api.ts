@@ -22,21 +22,23 @@ export const Login = async (login:LoginEntity) => {
 
   // 判断登陆逻辑
   if(
-    login.login == 'admin' && 
-    login.password == '111111'
+    login.login === 'admin' && 
+    login.password === '111111'
    ){
    	// 成功
     res.code = 0;
 	res.data = {
 	  message: "登陆成功",
-	  user_id: 1001
+	  user_id: 1001,
+    user_name: login.login,
+    token: 'c2acd2162d2f11ea9c2cc80aa95ba6a2'
 	};
-	res.msg = "success";
+	  res.msg = "success";
   }else{
   	// 失败
   	res.code = 401;
-	res.data = { message: "登陆失败，用户名或密码错误" };
-	res.msg = "failed";
+  	res.data = { message: "登陆失败，用户名或密码错误" };
+  	res.msg = "failed";
   }
   return res;
 }
