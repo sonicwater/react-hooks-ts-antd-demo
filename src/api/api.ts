@@ -27,12 +27,12 @@ export const Login = async (login:LoginEntity) => {
    ){
    	// 成功
     res.code = 0;
-	res.data = {
-	  message: "登陆成功",
-	  user_id: 1001,
-    user_name: login.login,
-    token: 'c2acd2162d2f11ea9c2cc80aa95ba6a2'
-	};
+  	res.data = {
+  	  message: "登陆成功",
+  	  user_id: 1001,
+      user_name: login.login,
+      token: 'c2acd2162d2f11ea9c2cc80aa95ba6a2'
+  	};
 	  res.msg = "success";
   }else{
   	// 失败

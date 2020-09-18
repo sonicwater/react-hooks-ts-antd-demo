@@ -1,33 +1,20 @@
 import React,{ useContext } from 'react';
+import { MenuComponent } from "./menu";
+import { AccountComponent } from "./account";
 import { Row, Col, Menu, Dropdown } from 'antd';
 import logo from 'static/images/logo.svg'
 import style from "./header.module.scss";
-import { Dispatch, Global } from 'components/context';
+import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 
 interface HeadertInterface {
   title: string;
-  onLogout: () => void;
 }
 
 
 
 export const HeaderComponent: React.FC<HeadertInterface> = (props) => {
   
-  const { title, onLogout } = props;
-
-  const { global } = useContext(Global);
-  const { dispatch } = useContext(Dispatch);
-
-  const menu = (
-    <Menu>
-      <Menu.Item>
-        <a href="">用户信息</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a href="" onClick={() => onLogout()}>登出账户</a>
-      </Menu.Item>
-    </Menu>
-  )
+  const { title } = props;
 
   return (
     <div className={style['header-warpper']}>
@@ -38,13 +25,10 @@ export const HeaderComponent: React.FC<HeadertInterface> = (props) => {
             <img src={logo} alt="logo" />
             <span>{title}</span>
           </a>
+          <MenuComponent onClickMenuItem={()=>{}} />
         </Col>
         <Col span={6} style={{'textAlign':'right'}}>
-          <Dropdown overlay={menu}>
-            <a className="ant-dropdown-link" href="">
-              设置 
-            </a>
-          </Dropdown>
+          <AccountComponent />
         </Col>
         <Col span={1}>&nbsp;</Col>
       </Row>
