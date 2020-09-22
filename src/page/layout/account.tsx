@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import style from "./account.module.scss";
 import { Dispatch, Global } from 'components/context';
 import { LOG_OUT } from 'reducers/reducers';
-
+import { Link } from 'react-router-dom';
 interface PropsMenu {
   
 }
@@ -33,7 +33,7 @@ export const AccountComponent: React.FC<PropsMenu> = (props) => {
   const menu = (
     <Menu>
       <Menu.Item>
-        <a href=""><UserOutlined /> &nbsp;用户信息</a>
+        <Link to="/main/user-info"><UserOutlined /> &nbsp;用户信息</Link>
       </Menu.Item>
       <Menu.Item>
         <a href="" onClick={() => handleLogout()}>

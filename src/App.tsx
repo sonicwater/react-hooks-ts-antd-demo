@@ -1,5 +1,5 @@
 import React,{ useReducer } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 import routes from './router';
 import { RouteWithSubRoutes } from './components/route';
 import { RouteInterface } from './model/route';
@@ -20,6 +20,7 @@ const App: React.FC = () => {
       <Global.Provider value={{ global }}>
         <Router>
           <Switch>
+            <Redirect exact from="/" to="/login" />
             {routes.map((route: RouteInterface, i: number) => {
               return RouteWithSubRoutes(route, i)
             })}

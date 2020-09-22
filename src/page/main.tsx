@@ -1,45 +1,33 @@
 import React,{ useState, useContext, useEffect } from 'react'
 import style from './main.module.scss';
-// import { UserInfoContext } from 'model/root';
+
 import { HeaderComponent } from "./layout/header";
-
-import { Dispatch, Global } from 'components/context';
-
-
+// import { Dispatch, Global } from 'components/context';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { RouteWithSubRoutes } from 'components/route';
+import { RouteInterface } from 'model/route';
 import { Layout } from 'antd';
 const { Header, Content, Sider } = Layout;
 
 
 
-export default () => {
+export default (props:any) => {
 
-  const [displayState, setDisplayState] = useState({
-    categorySiderDisplay: true,
-    cartSiderDisplay: false
-  });
+  const {routes} = props;
 
   return (
     <Layout className={style.main}>
       <Header style={{'background':'#fff','padding':'0'}}>
-        <HeaderComponent title='Ant Design' />
+        <HeaderComponent routes={routes} />
       </Header>
       
       <Layout className={style.layout}>
-        <Sider
-          width={240}
-          collapsible={true}
-          theme={"light"}
-          trigger={null}
-          collapsed={!displayState.categorySiderDisplay}
-          onClick={() => setDisplayState({
-            ...displayState,
-            categorySiderDisplay: !displayState.categorySiderDisplay
-          })}
-        >
-          1
-        </Sider>
         <Content>
-          
+          <Switch>
+            {routes.map((route: RouteInterface, i: number) => {
+              return RouteWithSubRoutes(route, i)
+            })}
+          </Switch>
         </Content>
       </Layout>
     </Layout>

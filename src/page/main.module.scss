@@ -4,7 +4,9 @@
     height: calc( 100% - 64px );
   }
   .layout{
-    
+    :global .ant-layout{
+	  height: 100%;
+	}
   }
 } 
 

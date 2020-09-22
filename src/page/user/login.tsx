@@ -44,7 +44,7 @@ export default () => {
       dispatch({ type: LOG_IN });
       
       // 跳转到main页面
-      history.push("/main");
+      history.push("/main/sub1");
       // 提示登陆成功
       message.success(res.data.message);
       
